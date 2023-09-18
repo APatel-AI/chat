@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import {auth, db} from '../firebase'
 import {addDoc, collection, serverTimestamp} from 'firebase/firestore'
-
+import { AiOutlineSend } from 'react-icons/ai';
 const style = {
   form: `h-14 w-full max-w-[900px]  flex text-xl absolute bottom-0`,
-  input: `w-full text-xl p-3 bg-gray-300 dark:bg-gray-800 text-black dark:text-white outline-none border-none`,
-  button: `w-[20%] bg-green-500`,
+  input: `w-full text-xl p-3 bg-gray-300 dark:bg-black text-black dark:text-white outline-none border-none`,
+  button: `w-[15%] justify-center items-center  bg-gradient-to-r from-yellow-200 to-red-700 dark:bg-gradient-to-r dark:from-blue-800 dark:to-blue-500`,
+  send: `mx-auto dark:text-white`
+ 
 };
 
 const SendMessage = ({scroll}) => {
@@ -38,8 +40,9 @@ const SendMessage = ({scroll}) => {
         placeholder='Message' 
       />
       <button className={style.button} type='submit'>
-        Send
+       <AiOutlineSend className={style.send} size={'30px'}/>
       </button>
+     
     </form>
   );
 };

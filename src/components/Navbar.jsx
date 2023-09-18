@@ -6,7 +6,7 @@ import DarkMode from '../darkMode';
 import Logout from './Logout';
 const style ={
 
-    nav: `bg-gray-300 h-20 p-4 flex justify-between  dark:bg-transparent items-center`, 
+    nav: `bg-gray-300 h-20 p-4 flex justify-between  dark:bg-black items-center`, 
     heading: `text-gray-500 text-3xl dark:text-pink-500`
 
 }

@@ -1,16 +1,16 @@
-import React, { useState, useEffect }from 'react'
-import { FaMoon, FaSun } from 'react-icons/fa'; 
+import React, { useState, useEffect } from "react";
+import { FaMoon, FaSun } from "react-icons/fa";
+
 const DarkMode = () => {
-    const [theme, setTheme] = useState(null);
+  const [theme, setTheme] = useState(null);
 
   useEffect(() => {
-    if(window.matchMedia('(prefers-color-scheme: dark)').matches){
-      setTheme('dark');
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
     }
-    else {
-      setTheme('light');
-    }
-  }, [])
+  }, []);
 
   useEffect(() => {
     if (theme === "dark") {
@@ -25,10 +25,14 @@ const DarkMode = () => {
   };
   return (
     <div>
-       <button className="bg-green-200 p-4 rounded-3xl" onClick={handleThemeSwitch}>
-       {theme === 'dark' ? <FaMoon /> :  <FaSun />}      </button>
+      <button
+        className="p-4 rounded-3xl bg-gradient-to-r from-yellow-200 to-red-700 dark:from-blue-800 dark:to-blue-500"
+        onClick={handleThemeSwitch}
+      >
+        {theme === "dark" ? <FaMoon /> : <FaSun />}{" "}
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default DarkMode
+export default DarkMode;
