@@ -1,12 +1,13 @@
 import React from 'react'
 import { auth } from '../firebase'; 
-import { useAuthState } from 'react-firebase-hooks/auth'
+import { useAuthState } from 'react-firebase-hooks/auth'; 
 import SignIn from './Signin';
 import DarkMode from '../darkMode';
+import Logout from './Logout';
 const style ={
 
-    nav: `bg-gray-800 h-20 p-4 flex justify-between  dark:bg-black items-center`, 
-    heading: `text-white text-3xl `
+    nav: `bg-gray-300 h-20 p-4 flex justify-between  dark:bg-transparent items-center`, 
+    heading: `text-gray-500 text-3xl dark:text-pink-500`
 
 }
 
@@ -15,9 +16,13 @@ const Navbar = () => {
   console.log(user)
   return (
     <div className={style.nav}>
-        <h1 className={style.heading}>Chat</h1>
-        <SignIn />
-        <DarkMode />
+     
+
+        <DarkMode className={style.heading} />
+
+        {user ? <Logout /> : <SignIn />}
+     
+      
     </div>
   )
 }
